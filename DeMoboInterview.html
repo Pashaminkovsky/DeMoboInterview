@@ -1,0 +1,46 @@
+<HTML>
+<TITLE> Coding Challenge </TITLE> 
+<h2> Coding Challenge </h2>
+<p id= "demo"></p>
+<script language = "Javascript">
+var i, j, k, l, m, result;
+var digits = [];
+for (i = 1; i < 10; i++) {
+	for (j = 1; j < 10; j++) {
+		if (j == i) {
+			continue;
+		}
+		for (k = 1; k < 10; k++) {
+			if (k == i || k == j) {
+				continue;
+			}
+			for (l = 1; l < 10; l++) {
+				if (l == i || l == j || l == k) {
+					continue;
+				}
+				for (m = 1; m < 10; m++) {
+					
+					if (m == i || m == j || m == k || m == l) {
+						continue;
+					}
+					result = (i*10 +j) * (k*100 + l*10 +m)
+					if (result < 10000) {
+						continue;
+					}
+					digits = (""+result).split("");
+					if (digits[0] == digits[1] || digits[0] == digits[2] || digits[0] == digits[3] || digits[0] == digits[4] || digits[1] == digits[2] || digits[1] == digits[3] || digits[1] == digits[4] || digits[2] == digits[3] || digits[2] == digits[4] || digits[3] == digits[4] || digits[0] == 0 || digits[1] == 0 || digits[2] == 0 || digits[3] == 0 || digits[4] == 0) {
+						continue;
+					}
+					if (result != 73892) {
+						document.write(result + ", ");
+					} else {
+						document.write(result);
+					}	
+				}
+			}
+		}
+	}
+}
+</script>
+</BODY>
+</HTML>
